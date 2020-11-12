@@ -85,6 +85,8 @@ export class Slider<ItemT extends any> extends Component<SliderProps<ItemT>, Sli
     const { renderItem, data, duration } = this.props;
     const { activeIndex, prevActiveIndex, fade } = this.state;
     const fadeClass = fade ? styles.fade : '';
+    console.log('current item', data[activeIndex]);
+    console.log('prev Item', data[prevActiveIndex]);
     return (
       <div className={styles.container}>
         <div className={styles.wrapper}>

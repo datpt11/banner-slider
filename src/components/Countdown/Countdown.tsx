@@ -12,7 +12,7 @@ interface CountdownState {
   seconds: number;
 }
 
-export class Countdown extends Component<CountdownProps, Partial<CountdownState>> {
+export class Countdown extends Component<CountdownProps, CountdownState> {
   private intervalId: number;
   constructor(props: CountdownProps) {
     super(props);
@@ -28,14 +28,32 @@ export class Countdown extends Component<CountdownProps, Partial<CountdownState>
 
   public componentDidMount() {
     const { endDate } = this.props;
+    this.setCountDown(endDate);
+    this.calculateCountdown(endDate);
+  }
+
+  public componentDidUpdate(prevProps: CountdownProps) {
+    const { endDate } = this.props;
+    if (prevProps.endDate !== endDate) {
+      this.calculateCountdown(endDate);
+      this.clearInterval();
+      this.setCountDown(endDate);
+    }
+  }
+
+  public componentWillUnmount() {
+    this.clearInterval();
+  }
+
+  private setCountDown = (endDate: CountdownProps['endDate']) => {
     this.intervalId = window.setInterval(() => {
       this.calculateCountdown(endDate);
     }, 1000);
-  }
+  };
 
-  public componentWillMount() {
+  private clearInterval = () => {
     clearInterval(this.intervalId);
-  }
+  };
 
   private calculateCountdown = (endDate: number) => {
     const second = 1000;
