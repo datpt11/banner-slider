@@ -1,0 +1,11 @@
+@import '../abstracts/abstracts.scss';
+
+:global {
+  .wil-insta-loading-wrap {
+    padding: 7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-dark-7;
+  }
+}

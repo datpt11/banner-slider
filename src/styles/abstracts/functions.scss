@@ -1,0 +1,7 @@
+@function px($pixel, $useUnit: true) {
+  @return $pixel / 10 + unquote(if($useUnit, 'rem', ''));
+}
+
+@function getAspectRatio($width, $height) {
+  @return ($height / $width) * 100%;
+}

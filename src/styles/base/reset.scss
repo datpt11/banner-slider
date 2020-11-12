@@ -1,0 +1,43 @@
+@import "../abstracts/abstracts.scss";
+
+:global {
+  .wil-instagram-global-style,
+  .wil-instagram-shopify {
+    box-sizing: border-box;
+
+    *, *:before, *:after {
+      box-sizing: border-box;
+      outline: none !important;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+      border: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+  .glide--swipeable {
+    cursor: default;
+  }
+  .glide__slide {
+    height: auto;
+  }
+  .glide__slides {
+    margin: 0;
+  }
+  .___modal_open___ {
+    overflow: hidden !important;
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+}

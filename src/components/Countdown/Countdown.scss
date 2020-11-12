@@ -1,0 +1,31 @@
+@import "../../styles/abstracts/abstracts.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+
+  @include media("<sm") {
+    display: none;
+  }
+}
+
+.item {
+  position: relative;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 8px;
+
+  @include media("<md") {
+    margin: 0 5px;
+  }
+
+  span {
+    font-size: 12px;
+    font-weight: normal;
+  }
+}

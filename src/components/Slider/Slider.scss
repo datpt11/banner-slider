@@ -1,0 +1,188 @@
+@import "../../styles/abstracts/abstracts.scss";
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.buttonWrap {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+
+  // @include media("<tablet") {
+  //   right: 10px;
+  // }
+
+  // @include media("<=phone") {
+  //   right: 0;
+  // }
+}
+
+.buttonnDefault {
+  background-color: #2d6cdf;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 100%;
+
+  // @include media("<=375px") {
+  //   width: 25px;
+  //   height: 25px;
+  // }
+
+  // @include media("<=phone") {
+  //   width: 20px;
+  //   height: 20px;
+  // }
+
+  &::before,
+  &::after {
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    content: '';
+    position: absolute;
+  }
+}
+
+.prevBtn {
+  margin-right: 15px;
+
+  // @include media("<tablet") {
+  //   margin-right: 6px;
+  // }
+
+  &::before,
+  &::after {
+    border-radius: 2px;
+    height: 0;
+    left: 8px;
+    width: 9px;
+
+    // @include media("<=375px") {
+    //   left: 8px;
+    //   width: 6px;
+    // }
+
+    // @include media("<=phone") {
+    //   left: 6px;
+    //   width: 4px;
+    // }
+  }
+
+  &::before {
+    top: 10px;
+    transform: rotate(-45deg);
+
+    // @include media("<=375px") {
+    //   top: 8px;
+    // }
+
+    // @include media("<=phone") {
+    //   top: 6px;
+    // }
+  }
+
+  &::after {
+    bottom: 10px;
+    transform: rotate(45deg);
+
+    // @include media("<=375px") {
+    //   bottom: 8px;
+    // }
+
+    // @include media("<=phone") {
+    //   bottom: 6px;
+    // }
+  }
+}
+
+.nextBtn {
+
+  &::before,
+  &::after {
+    border-radius: 2px;
+    height: 0;
+    left: 8px;
+    width: 9px;
+
+    // @include media("<=375px") {
+    //   left: 8px;
+    //   width: 6px;
+    // }
+
+    // @include media("<=phone") {
+    //   left: 6px;
+    //   width: 4px;
+    // }
+  }
+
+  &::before {
+    bottom: 10px;
+    transform: rotate(-45deg);
+
+    // @include media("<=375px") {
+    //   bottom: 8px;
+    // }
+
+    // @include media("<=phone") {
+    //   bottom: 6px;
+    // }
+  }
+
+  &::after {
+    top: 10px;
+    transform: rotate(45deg);
+
+    // @include media("<=375px") {
+    //   top: 8px;
+    // }
+
+    // @include media("<=phone") {
+    //   top: 6px;
+    // }
+  }
+}
+
+.prevSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+.fade {
+  animation: fade 300ms ease;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}

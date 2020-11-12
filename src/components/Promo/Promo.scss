@@ -1,0 +1,123 @@
+@import "../../styles/abstracts/abstracts.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 0 100px 0 15px;
+}
+
+.withBg {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  flex: 50%;
+
+  @include media("<=xxs") {
+    flex: 30%;
+  }
+
+  .imgContainer {
+    position: relative;
+    margin-right: 30px;
+
+
+    @include media("<sm") {
+      display: none;
+    }
+
+    img {
+      width: 120px;
+      display: block;
+    }
+  }
+
+  .desc {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+
+    @include media("<sm") {
+      font-size: 12px;
+    }
+  }
+}
+
+.center {
+  flex: 10%;
+
+  .discount {
+    font-weight: bold;
+
+    @include media("<1600px") {
+      text-align: center;
+    }
+
+    .discountLabel {
+      font-size: 20px;
+      margin: 5px 0;
+      line-height: 25px;
+
+      @include media("<md") {
+        font-size: 12px;
+      }
+    }
+
+    .discountPercent {
+      font-size: 30px;
+      color: rgb(207, 233, 63);
+      margin: 5px 0;
+      line-height: 25px;
+
+      @include media("<md") {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+
+  .btn {
+    outline: none;
+    border: 0;
+    background-color: rgb(207, 233, 63);
+    border-radius: 20px;
+    padding: 6px 20px;
+    margin-left: 10px;
+
+    @include media("<md") {
+      padding: 6px 18px;
+    }
+
+    @include media("<=sm") {
+      padding: 6px 5px;
+    }
+
+    // @include media("<=375px") {
+    //   margin-left: 6px;
+    // }
+
+    // @include media("<=phone") {
+    //   padding: 1px 10px;
+    //   font-size: 12px;
+    // }
+  }
+}
+
+.fade {
+  transition: all 150ms ease-in-out 250ms;
+}
